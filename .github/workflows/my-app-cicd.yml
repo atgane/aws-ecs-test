@@ -24,8 +24,6 @@ jobs:
       
     - name: Build, tag, and push image to Amazon ECR
       run: |
-        docker build -t myapp . \
-		    docker tag myapp:latest 464373138472.dkr.ecr.us-east-1.amazonaws.com/myapp:latest \
+        docker build -t myapp .
+		    docker tag myapp:latest 464373138472.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
         docker push 464373138472.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
-
-  deploy:
