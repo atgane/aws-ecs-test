@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     a = 0
-    for i in range(30000):
+    for i in range(40000):
         a += i
     return f'{a}'
 
