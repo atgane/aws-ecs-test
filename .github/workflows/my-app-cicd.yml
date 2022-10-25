@@ -37,7 +37,7 @@ jobs:
         image: 464373138472.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
 
     - name: Deploy Amazon ECS task definition
-      uses: aws-actions/amazon-ecs-deploy-task-definition@de0132cf8cdedb79975c6d42b77eb7ea193cf28e
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
         service: myapp-sv5
