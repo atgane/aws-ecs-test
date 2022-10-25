@@ -23,10 +23,12 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v1
       
     - name: Build, tag, and push image to Amazon ECR
+      id: build-image
       run: |
         docker build -t myapp .
         docker tag myapp:latest 464373138472.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
         docker push 464373138472.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
+        echo "::set-output name=image::464373138472.dkr.ecr.us-east-1.amazonaws.com/myapp:latest"
 
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
