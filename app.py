@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     a = 0
-    for i in range(20000):
+    for i in range(10000):
         a += i
     return os.getenv("DOT") + str(a)
 
